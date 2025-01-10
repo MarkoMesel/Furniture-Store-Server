@@ -1,0 +1,221 @@
+{
+    "products":
+    [
+        {
+            "id": 1,
+            "name": "sofa1",
+            "price": 199.99,
+            "description": "A comfortable sofa.",
+            "category": "Sofa",
+            "image": "/public/images/image1.jpg",
+            "stock": 10,
+            "dimensions": {
+              "width": 200,
+              "height": 80,
+              "depth": 90
+            },
+            "material": "Fabric and Wood",
+            "rating": 4.7,
+            "warranty": "2 years",
+            "isFeatured": true
+        },
+        {
+            "id": 2,
+            "name": "chair1",
+            "price": 199.99,
+            "description": "A comfortable chair.",
+            "category": "Chair",
+            "image": "/public/images/image2.jpg",
+            "stock": 10,
+            "dimensions": {
+              "width": 200,
+              "height": 80,
+              "depth": 90
+            },
+            "material": "Fabric and Wood",
+            "rating": 4.7,
+            "warranty": "2 years",
+            "isFeatured": true
+        },
+        {
+            "id": 3,
+            "name": "chair2",
+            "price": 199.99,
+            "description": "A comfortable chair.",
+            "category": "Chair",
+            "image": "/public/images/image3.jpg",
+            "stock": 10,
+            "dimensions": {
+              "width": 200,
+              "height": 80,
+              "depth": 90
+            },
+            "material": "Fabric and Wood",
+            "rating": 4.7,
+            "warranty": "2 years",
+            "isFeatured": true
+        },
+        {
+            "id": 4,
+            "name": "table1",
+            "price": 199.99,
+            "description": "A comfortable table.",
+            "category": "Table",
+            "image": "/public/images/image4.jpg",
+            "stock": 10,
+            "dimensions": {
+              "width": 200,
+              "height": 80,
+              "depth": 90
+            },
+            "material": "Fabric and Wood",
+            "rating": 4.7,
+            "warranty": "2 years",
+            "isFeatured": true
+        },
+        {
+            "id": 5,
+            "name": "chair3",
+            "price": 199.99,
+            "description": "A comfortable chair.",
+            "category": "Chair",
+            "image": "/public/images/image5.jpg",
+            "stock": 10,
+            "dimensions": {
+              "width": 200,
+              "height": 80,
+              "depth": 90
+            },
+            "material": "Fabric and Wood",
+            "rating": 4.7,
+            "warranty": "2 years",
+            "isFeatured": true
+        },
+        {
+            "id": 6,
+            "name": "chair4",
+            "price": 199.99,
+            "description": "A comfortable chair.",
+            "category": "Chair",
+            "image": "/public/images/image6.jpg",
+            "stock": 10,
+            "dimensions": {
+              "width": 200,
+              "height": 80,
+              "depth": 90
+            },
+            "material": "Fabric and Wood",
+            "rating": 4.7,
+            "warranty": "2 years",
+            "isFeatured": true
+        },
+        {
+            "id": 7,
+            "name": "chair5",
+            "price": 199.99,
+            "description": "A comfortable chair.",
+            "category": "Chair",
+            "image": "/public/images/image7.jpg",
+            "stock": 10,
+            "dimensions": {
+              "width": 200,
+              "height": 80,
+              "depth": 90
+            },
+            "material": "Fabric and Wood",
+            "rating": 4.7,
+            "warranty": "2 years",
+            "isFeatured": true
+        },
+        {
+            "id": 8,
+            "name": "chair6",
+            "price": 199.99,
+            "description": "A comfortable chair.",
+            "category": "Chair",
+            "image": "/public/images/image8.jpg",
+            "stock": 10,
+            "dimensions": {
+              "width": 200,
+              "height": 80,
+              "depth": 90
+            },
+            "material": "Fabric and Wood",
+            "rating": 4.7,
+            "warranty": "2 years",
+            "isFeatured": true
+        },
+        {
+            "id": 9,
+            "name": "chair7",
+            "price": 199.99,
+            "description": "A comfortable chair.",
+            "category": "Chair",
+            "image": "/public/images/image9.jpg",
+            "stock": 10,
+            "dimensions": {
+              "width": 200,
+              "height": 80,
+              "depth": 90
+            },
+            "material": "Fabric and Wood",
+            "rating": 4.7,
+            "warranty": "2 years",
+            "isFeatured": true
+        },
+        {
+            "id": 10,
+            "name": "chair8",
+            "price": 199.99,
+            "description": "A comfortable chair.",
+            "category": "Chair",
+            "image": "/public/images/image10.jpg",
+            "stock": 10,
+            "dimensions": {
+              "width": 200,
+              "height": 80,
+              "depth": 90
+            },
+            "material": "Fabric and Wood",
+            "rating": 4.7,
+            "warranty": "2 years",
+            "isFeatured": true
+        },
+        {
+            "id": 11,
+            "name": "sofa2",
+            "price": 199.99,
+            "description": "A comfortable chair.",
+            "category": "Sofa",
+            "image": "/public/images/image11.jpg",
+            "stock": 10,
+            "dimensions": {
+              "width": 200,
+              "height": 80,
+              "depth": 90
+            },
+            "material": "Fabric and Wood",
+            "rating": 4.7,
+            "warranty": "2 years",
+            "isFeatured": true
+        },
+        {
+            "id": 12,
+            "name": "sofa3",
+            "price": 199.99,
+            "description": "A comfortable chair.",
+            "category": "Sofa",
+            "image": "/public/images/image12.jpg",
+            "stock": 10,
+            "dimensions": {
+              "width": 200,
+              "height": 80,
+              "depth": 90
+            },
+            "material": "Fabric and Wood",
+            "rating": 4.7,
+            "warranty": "2 years",
+            "isFeatured": true
+        }
+    ]
+}
