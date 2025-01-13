@@ -25,8 +25,8 @@ app.get("/products", (req, res) => {
       return;
     }
 
-    const jsonData = JSON.parse(data);
-    const result = jsonData.items.slice(start, end);
+    const jsonData = JSON.parse(data); 
+    const result = jsonData.products;
 
     res
       .status(200)

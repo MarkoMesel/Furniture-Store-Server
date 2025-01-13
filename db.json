@@ -7,7 +7,7 @@
             "price": 199.99,
             "description": "A comfortable sofa.",
             "category": "Sofa",
-            "image": "/public/images/image1.jpg",
+            "image": "/images/image1.jpg",
             "stock": 10,
             "dimensions": {
               "width": 200,
@@ -25,7 +25,7 @@
             "price": 199.99,
             "description": "A comfortable chair.",
             "category": "Chair",
-            "image": "/public/images/image2.jpg",
+            "image": "/images/image2.jpg",
             "stock": 10,
             "dimensions": {
               "width": 200,
@@ -43,7 +43,7 @@
             "price": 199.99,
             "description": "A comfortable chair.",
             "category": "Chair",
-            "image": "/public/images/image3.jpg",
+            "image": "/images/image3.jpg",
             "stock": 10,
             "dimensions": {
               "width": 200,
@@ -61,7 +61,7 @@
             "price": 199.99,
             "description": "A comfortable table.",
             "category": "Table",
-            "image": "/public/images/image4.jpg",
+            "image": "/images/image4.jpg",
             "stock": 10,
             "dimensions": {
               "width": 200,
@@ -79,7 +79,7 @@
             "price": 199.99,
             "description": "A comfortable chair.",
             "category": "Chair",
-            "image": "/public/images/image5.jpg",
+            "image": "/images/image5.jpg",
             "stock": 10,
             "dimensions": {
               "width": 200,
@@ -97,7 +97,7 @@
             "price": 199.99,
             "description": "A comfortable chair.",
             "category": "Chair",
-            "image": "/public/images/image6.jpg",
+            "image": "/images/image6.jpg",
             "stock": 10,
             "dimensions": {
               "width": 200,
@@ -115,7 +115,7 @@
             "price": 199.99,
             "description": "A comfortable chair.",
             "category": "Chair",
-            "image": "/public/images/image7.jpg",
+            "image": "/images/image7.jpg",
             "stock": 10,
             "dimensions": {
               "width": 200,
@@ -133,7 +133,7 @@
             "price": 199.99,
             "description": "A comfortable chair.",
             "category": "Chair",
-            "image": "/public/images/image8.jpg",
+            "image": "/images/image8.jpg",
             "stock": 10,
             "dimensions": {
               "width": 200,
@@ -151,7 +151,7 @@
             "price": 199.99,
             "description": "A comfortable chair.",
             "category": "Chair",
-            "image": "/public/images/image9.jpg",
+            "image": "/images/image9.jpg",
             "stock": 10,
             "dimensions": {
               "width": 200,
@@ -169,7 +169,7 @@
             "price": 199.99,
             "description": "A comfortable chair.",
             "category": "Chair",
-            "image": "/public/images/image10.jpg",
+            "image": "/images/image10.jpg",
             "stock": 10,
             "dimensions": {
               "width": 200,
@@ -187,7 +187,7 @@
             "price": 199.99,
             "description": "A comfortable chair.",
             "category": "Sofa",
-            "image": "/public/images/image11.jpg",
+            "image": "/images/image11.jpg",
             "stock": 10,
             "dimensions": {
               "width": 200,
@@ -205,7 +205,7 @@
             "price": 199.99,
             "description": "A comfortable chair.",
             "category": "Sofa",
-            "image": "/public/images/image12.jpg",
+            "image": "/images/image12.jpg",
             "stock": 10,
             "dimensions": {
               "width": 200,
