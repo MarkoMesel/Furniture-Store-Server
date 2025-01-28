@@ -6,7 +6,7 @@ const cors = require("cors");
 const corsOptions = {
   origin: "http://localhost:4200",
   optionsSuccessStatus: 204,
-  methods: "GET, POST",
+  methods: "GET, POST, PUT",
 };
 
 // Create an Express application
@@ -40,7 +40,6 @@ app.get("/products", (req, res) => {
 });
 
 app.post("/products", (req, res) => {
-  console.log("POST request received at:", new Date());
   const { 
     name,
     price,
@@ -94,6 +93,65 @@ app.post("/products", (req, res) => {
       }
 
       res.status(201).json(newItem);
+    });
+  });
+});
+
+app.put("/products/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const { 
+    name,
+    price,
+    description,
+    category,
+    image,
+    stock,
+    dimensions,
+    material,
+    rating,
+    warranty,
+    isFeatured
+  } = req.body;
+
+  fs.readFile("db.json", "utf8", (err, data) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send("Internal Server Error");
+      return;
+    }
+
+    const jsonData = JSON.parse(data);
+
+    const index = jsonData.products.findIndex((product) => product.id === id);
+
+    if (index === -1) {
+      res.status(404).send("Not Found");
+      return;
+    }
+
+    jsonData.products[index] = {
+      id,
+      name,
+      price,
+      description,
+      category,
+      image,
+      stock,
+      dimensions,
+      material,
+      rating,
+      warranty,
+      isFeatured
+    };
+
+    fs.writeFile("db.json", JSON.stringify(jsonData), (err) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Internal Server Error");
+        return;
+      }
+
+      res.status(200).json(jsonData.products[index]);
     });
   });
 });
