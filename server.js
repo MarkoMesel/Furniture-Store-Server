@@ -6,7 +6,7 @@ const cors = require("cors");
 const corsOptions = {
   origin: "http://localhost:4200",
   optionsSuccessStatus: 204,
-  methods: "GET, POST, PUT",
+  methods: "GET, POST, PUT, DELETE",
 };
 
 // Create an Express application
@@ -152,6 +152,39 @@ app.put("/products/:id", (req, res) => {
       }
 
       res.status(200).json(jsonData.products[index]);
+    });
+  });
+});
+
+app.delete("/products/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+
+  fs.readFile("db.json", "utf8", (err, data) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send("Internal Server Error");
+      return;
+    }
+
+    const jsonData = JSON.parse(data);
+
+    const index = jsonData.products.findIndex((product) => product.id === id);
+
+    if (index === -1) {
+      res.status(404).send("Not Found");
+      return;
+    }
+
+    jsonData.products.splice(index, 1);
+
+    fs.writeFile("db.json", JSON.stringify(jsonData), (err) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Internal Server Error");
+        return;
+      }
+
+      res.status(204).send();
     });
   });
 });
