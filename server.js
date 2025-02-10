@@ -4,9 +4,9 @@ const cors = require("cors");
 
 // Cors configuration - Allows requests from localhost:4200
 const corsOptions = {
-  origin: "http://localhost:4200",
-  optionsSuccessStatus: 204,
-  methods: "GET, POST, PUT, DELETE",
+    origin: "http://localhost:4200",
+    optionsSuccessStatus: 204,
+    methods: "GET, POST, PUT, DELETE",
 };
 
 // Create an Express application
@@ -20,177 +20,178 @@ app.use(express.json());
 
 // Define a simple route
 app.get("/products", (req, res) => {
+    fs.readFile("db.json", "utf8", (err, data) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send("Internal Server Error");
+            return;
+        }
 
-  fs.readFile("db.json", "utf8", (err, data) => {
-    if (err) {
-      console.log(err);
-      res.status(500).send("Internal Server Error");
-      return;
-    }
+        const jsonData = JSON.parse(data);
+        const result = jsonData.products;
 
-    const jsonData = JSON.parse(data); 
-    const result = jsonData.products;
-
-    res
-      .status(200)
-      .json({
-      items: result
+        res.status(200).json({
+            items: result,
+        });
     });
-  });
 });
 
 app.post("/products", (req, res) => {
-  const { 
-    name,
-    price,
-    description,
-    category,
-    image,
-    stock,
-    dimensions,
-    material,
-    rating,
-    warranty,
-    isFeatured
-  } = req.body;
+    const {
+        name,
+        price,
+        description,
+        category,
+        image,
+        stock,
+        dimensions,
+        material,
+        rating,
+        warranty,
+        isFeatured,
+    } = req.body;
 
-  fs.readFile("db.json", "utf8", (err, data) => {
-    if (err) {
-      console.log(err);
-      res.status(500).send("Internal Server Error");
-      return;
-    }
+    fs.readFile("db.json", "utf8", (err, data) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send("Internal Server Error");
+            return;
+        }
 
-    const jsonData = JSON.parse(data);
+        const jsonData = JSON.parse(data);
 
-    const maxId = jsonData.products.reduce(
-      (max, product) => Math.max(max, product.id),
-      0
-    );
+        const maxId = jsonData.products.reduce(
+            (max, product) => Math.max(max, product.id),
+            0
+        );
 
-    const newItem = {
-      id: maxId + 1,
-      name,
-      price,
-      description,
-      category,
-      image,
-      stock,
-      dimensions,
-      material,
-      rating,
-      warranty,
-      isFeatured
-    };
+        const newItem = {
+            id: maxId + 1,
+            name,
+            price,
+            description,
+            category,
+            image,
+            stock,
+            dimensions,
+            material,
+            rating,
+            warranty,
+            isFeatured,
+        };
 
-    jsonData.products.push(newItem);
+        jsonData.products.push(newItem);
 
-    fs.writeFile("db.json", JSON.stringify(jsonData), (err) => {
-      if (err) {
-        console.log(err);
-        res.status(500).send("Internal Server Error");
-        return;
-      }
+        fs.writeFile("db.json", JSON.stringify(jsonData), (err) => {
+            if (err) {
+                console.log(err);
+                res.status(500).send("Internal Server Error");
+                return;
+            }
 
-      res.status(201).json(newItem);
+            res.status(201).json(newItem);
+        });
     });
-  });
 });
 
 app.put("/products/:id", (req, res) => {
-  const id = parseInt(req.params.id);
-  const { 
-    name,
-    price,
-    description,
-    category,
-    image,
-    stock,
-    dimensions,
-    material,
-    rating,
-    warranty,
-    isFeatured
-  } = req.body;
+    const id = parseInt(req.params.id);
+    const {
+        name,
+        price,
+        description,
+        category,
+        image,
+        stock,
+        dimensions,
+        material,
+        rating,
+        warranty,
+        isFeatured,
+    } = req.body;
 
-  fs.readFile("db.json", "utf8", (err, data) => {
-    if (err) {
-      console.log(err);
-      res.status(500).send("Internal Server Error");
-      return;
-    }
+    fs.readFile("db.json", "utf8", (err, data) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send("Internal Server Error");
+            return;
+        }
 
-    const jsonData = JSON.parse(data);
+        const jsonData = JSON.parse(data);
 
-    const index = jsonData.products.findIndex((product) => product.id === id);
+        const index = jsonData.products.findIndex(
+            (product) => product.id === id
+        );
 
-    if (index === -1) {
-      res.status(404).send("Not Found");
-      return;
-    }
+        if (index === -1) {
+            res.status(404).send("Not Found");
+            return;
+        }
 
-    jsonData.products[index] = {
-      id,
-      name,
-      price,
-      description,
-      category,
-      image,
-      stock,
-      dimensions,
-      material,
-      rating,
-      warranty,
-      isFeatured
-    };
+        jsonData.products[index] = {
+            id,
+            name,
+            price,
+            description,
+            category,
+            image,
+            stock,
+            dimensions,
+            material,
+            rating,
+            warranty,
+            isFeatured,
+        };
 
-    fs.writeFile("db.json", JSON.stringify(jsonData), (err) => {
-      if (err) {
-        console.log(err);
-        res.status(500).send("Internal Server Error");
-        return;
-      }
+        fs.writeFile("db.json", JSON.stringify(jsonData), (err) => {
+            if (err) {
+                console.log(err);
+                res.status(500).send("Internal Server Error");
+                return;
+            }
 
-      res.status(200).json(jsonData.products[index]);
+            res.status(200).json(jsonData.products[index]);
+        });
     });
-  });
 });
 
 app.delete("/products/:id", (req, res) => {
-  const id = parseInt(req.params.id);
+    const id = parseInt(req.params.id);
 
-  fs.readFile("db.json", "utf8", (err, data) => {
-    if (err) {
-      console.log(err);
-      res.status(500).send("Internal Server Error");
-      return;
-    }
+    fs.readFile("db.json", "utf8", (err, data) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send("Internal Server Error");
+            return;
+        }
 
-    const jsonData = JSON.parse(data);
+        const jsonData = JSON.parse(data);
 
-    const index = jsonData.products.findIndex((product) => product.id === id);
+        const index = jsonData.products.findIndex(
+            (product) => product.id === id
+        );
 
-    if (index === -1) {
-      res.status(404).send("Not Found");
-      return;
-    }
+        if (index === -1) {
+            res.status(404).send("Not Found");
+            return;
+        }
 
-    jsonData.products.splice(index, 1);
+        jsonData.products.splice(index, 1);
 
-    fs.writeFile("db.json", JSON.stringify(jsonData), (err) => {
-      if (err) {
-        console.log(err);
-        res.status(500).send("Internal Server Error");
-        return;
-      }
+        fs.writeFile("db.json", JSON.stringify(jsonData), (err) => {
+            if (err) {
+                console.log(err);
+                res.status(500).send("Internal Server Error");
+                return;
+            }
 
-      res.status(204).send();
+            res.status(204).send();
+        });
     });
-  });
 });
 
 // Set the server to listen on port 3000
 const port = 3000;
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Server is running on http://localhost:${port}`);
 });
